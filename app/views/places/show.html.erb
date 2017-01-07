@@ -115,7 +115,7 @@
 
   <% @place.photos.each do |photo| %>
     <div class="booyah-box col-xs-12 col-sm-6">
-      <%= image_tag photo.picture %>
+      <%= image_tag photo.picture, class: "img-responsive" %>
       <%= photo.caption %>
     </div>
   <% end %>
@@ -134,7 +134,7 @@
       <div class="modal-body">
 
             <%= f.input :caption %>
-            <%= f.file_field :picture %>
+            <%= f.input :picture %>
 
 
       </div>
