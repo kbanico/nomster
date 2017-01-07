@@ -98,22 +98,28 @@
 <% end %>
 
 
-<h1>Photos</h1>
-<div class="booyah-box col-xs-10 col-xs-offset-1">
+<div class="clear"></div>
+<br>
+<br>
+
+<% if current_user.present? %>
+<div class="col-xs-10 col-xs-offset-1">
+  <h1 class="pull-left">Photos</h1>
+  <!-- Button trigger modal -->
+  <button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal1">
+    Add a photo
+  </button>
+</div>
+<% end %>
+
 
   <% @place.photos.each do |photo| %>
-    <div class="col-xs-12">
+    <div class="booyah-box col-xs-12 col-sm-6">
       <%= photo.caption %>
     </div>
   <% end %>
-</div>
 
 
-
-<!-- Button trigger modal -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
-  Add a photo
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
