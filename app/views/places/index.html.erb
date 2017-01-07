@@ -9,11 +9,9 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="thumbnail">
-        <img src="<%=place.photos.last.picture %>" alt="...">
+        <a href="<%= place_path(place) %>"> <img src="<%=place.photos.last.picture %>" alt="..."></a>
         <div class="caption">
-          <h3>Thumbnail label</h3>
-          <p>...</p>
-          <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+          <h3><%= place.photos.last.caption %></h3>
         </div>
       </div>
     </div>
@@ -25,7 +23,7 @@
 
 
   <% if place.user.present? %>
-    <small><%= place.user.email %></small>
+    <small>Posted By: <%= place.user.email %></small>
   <% end %>
 
   <% if place.comments.present? %>
