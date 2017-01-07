@@ -117,8 +117,14 @@
 
   <% @place.photos.each do |photo| %>
     <div class="booyah-box col-xs-12 col-sm-6">
+      <div class="thumbnail">
       <%= image_tag photo.picture, class: "img-responsive" %>
-      <%= photo.caption %>
+      <br>
+      <div class="caption">
+        <%= photo.caption %>
+      </div>
+
+      </div>
     </div>
   <% end %>
 
