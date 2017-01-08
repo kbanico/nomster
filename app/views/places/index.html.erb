@@ -75,7 +75,9 @@
         <b><%= place.comments.last.humanized_rating %></b> -
       <% end %>
       <%= place.comments.last.message %>
+      <% if place.comments.last.user.present? %>
       <small><%= place.comments.last.user.email %></small>
+      <% end %>
     </blockquote>
   </div>
   <% end %>
@@ -85,4 +87,3 @@
 <div class="text-center">
   <%= will_paginate @places %>
 </div>
-
